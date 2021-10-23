@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation</title>
+    <!-- BOXICON -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <header class="app-banner">
+        <a href="#content" class="app-banner__skip">skip to main content</a>
+        <div class="app-banner__container">
+            <h1 class="app-banner__heading">Company Name</h1>
+            <nav class="app-banner__navigation">
+                <ul class="app-banner__list">
+                    <li class="app-banner__list-item"><a href="#" class="app-banner__link"><i class="bx bx-home-alt app-banner__icon"></i>home</a></li>
+                    <li class="app-banner__list-item"><a href="#about" class="app-banner__link"><i class="bx bx-user app-banner__icon"></i>about</a></li>
+                    <li class="app-banner__list-item"><a href="#location" class="app-banner__link"><i class="bx bx-location-plus app-banner__icon"></i>location</a></li>
+                    <li class="app-banner__list-item"><a href="#contact" class="app-banner__link"><i class="bx bx-message app-banner__icon"></i>contact</a></li>
+                    <li class="app-banner__list-item"><button class="app-banner__button" id="dark-mode"><i class="bx bx-moon app-banner__icon"></i><span class="app-banner__button-text">dark</span> mode</button></li>  
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="content">
+        <section id="hero" aria-labelledby="hero-heading">
+            <h2 id="hero-heading">Value Proposition</h2>
+        </section>
+        <section id="about" aria-labelledby="about-heading">
+            <h3 id="about-heading">About</h3>
+        </section>
+        <section id="location" aria-labelledby="location-heading">
+            <h4 id="location-heading">Location</h5>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h5 id="contact-heading">Contact</h4>
+        </section>
+    </main>
+    <script src="dist/js/scripts.min.js"></script>
+</body>
+</html>

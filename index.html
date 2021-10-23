@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICON -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="dist/css/style.min.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Hello world</h1>
-    <script src="dist/js/scripts.min.css"></script>
+    <header class="banner" id="app-banner" aria-labelledby="app-title">
+        <nav class="accessibility">
+            <a href="#content" class="accessibility__cta">skip to main content</a>
+        </nav>
+        <div class="banner__container">
+            <h1 class="banner__heading" id="app-title">App Title</h1>
+            <nav class="banner__navigation" id="main-navigation">
+                <button class="banner__button--menu" id="menu-button" aria-controls="navigation-list" aria-haspopup="true"
+                    aria-expanded="false"><i class='bx bx-menu banner__menu-icon'></i>Menu</button>
+                <ul class="banner__list" id="navigation-list">
+                    <li class="banner__item"><a href="#home">Home</a></li>
+                    <li class="banner__item"><a href="#about">About</a></li>
+                    <li class="banner__item"><a href="#contact">Contact</a></li>
+                    <li class="banner__item"><a href="#location">Location</a></li>
+                    <li class="banner__item"><button class="banner__button" id="list-mode-button">Dark Mode</button></li>
+                    <li class="banner__item">
+                        <button class="banner__button banner__dropdown" aria-controls="social-list" aria-haspopup="true"
+                        aria-expanded="false">Social Media<i class='bx bx-caret-down' ></i></button>
+                            <ul class="banner__social-list" id="social-list">
+                                <li class="banner__social-item"><a href="#"><i class="bx bxl-facebook banner__icon"></i><span class="banner__link-text">Facebook</span></a></li>
+                                <li class="banner__social-item"><a href="#"><i class="bx bxl-twitter banner__icon"></i><span class="banner__link-text">Twitter</span></a></li>
+                                <li class="banner__social-item"><a href="#"><i class="bx bxl-instagram banner__icon"></i><span class="banner__link-text">Instagram</span></a></li>
+                                <li class="banner__social-item"><a href="#"><i class="bx bxl-linkedin banner__icon"></i><span class="banner__link-text">LinkedIn</span></a></li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+                <ul class="banner__featured-list">
+                    <li class="banner__featured-item"><a href="#home"><i class="bx bx-home-alt banner__featured-icon"></i>home</a></li>
+                    <li class="banner__featured-item"><a href="#about"><i class="bx bx-user banner__featured-icon"></i>about</a></li>
+                    <li class="banner__featured-item"><a href="#contact"><i class="bx bx-message banner__featured-icon"></i>contact</a></li>
+                    <li class="banner__featured-item"><a href="#location"><i class="bx bx-location-plus banner__featured-icon" ></i>location</a></li>
+                    <li class="banner__featured-item"><button class="banner__button" id="featured-mode-button"><i class="bx bx-moon banner__featured-icon"></i>mode</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="home" aria-labelledby="home-heading">
+            <h2 id="home-heading">Home</h2>
+        </section>
+        <section id="about" aria-labelledby="about-heading">
+            <h3 id="about-heading">About</h3>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h4 id="contact-heading">Contact</h4>
+        </section>
+        <section id="location" aria-labelledby="location-heading">
+            <h5 id="location-heading">Location</h5>
+        </section>
+    </main>
+    <script src="dist/js/scripts.min.js"></script>
 </body>
+
 </html>
