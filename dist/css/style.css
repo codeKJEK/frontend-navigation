@@ -31,10 +31,16 @@ body {
   min-height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 .app-banner__heading {
   font-size: 1em;
+}
+.app-banner__phone {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.9em;
 }
 .app-banner__navigation {
   position: fixed;
@@ -53,19 +59,14 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
+.app-banner .btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
 .app-banner__link {
   color: inherit;
   text-decoration: none;
-}
-.app-banner__button {
-  border: none;
-  background: transparent;
-  font-size: inherit;
-  color: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-.app-banner__link, .app-banner__button {
   font-size: 0.75em;
   min-height: 3.5rem;
   min-width: 3.5rem;
@@ -74,17 +75,29 @@ body {
   align-items: center;
   justify-content: center;
   row-gap: 0.25rem;
+  padding: 0;
 }
-.app-banner__link:active, .app-banner__button:active {
-  border-bottom: 2px solid #808080;
+.app-banner__link:active {
+  animation-name: active-push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
 }
-.app-banner__button-text {
+.app-banner__desktop-text {
   display: none;
 }
 .app-banner__icon {
   font-size: 1.5rem;
 }
 
+@keyframes active-push {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .dark-mode {
   background-color: #0d0d0d;
   color: #f2f2f2;
@@ -117,24 +130,50 @@ body {
     justify-content: space-between;
     padding: 0 1rem;
   }
+  .app-banner__phone {
+    display: none;
+  }
   .app-banner__navigation {
     position: static;
     width: unset;
   }
+  .app-banner__list {
+    column-gap: 1.75rem;
+  }
   .app-banner__icon {
     display: none;
   }
-  .app-banner__button {
+  .app-banner .btn {
     flex-direction: row;
     column-gap: 0.25rem;
   }
-  .app-banner__link, .app-banner__button {
+  .app-banner__link {
     font-size: 0.9em;
+    min-height: unset;
+    min-width: unset;
+    position: relative;
+    transform: perspective(1px) translateZ(0);
+    overflow: hidden;
+    padding: 1rem 0;
   }
-  .app-banner__link:hover, .app-banner__button:hover {
-    border-bottom: 2px solid #808080;
+  .app-banner__link:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: gray;
+    height: 4px;
+    transform: translateY(4px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
   }
-  .app-banner__button-text {
+  .app-banner__link:hover:before {
+    transform: translateY(0);
+  }
+  .app-banner__desktop-text {
     display: block;
   }
 }

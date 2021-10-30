@@ -5,17 +5,28 @@ window.addEventListener("DOMContentLoaded", function () {
   // MODE BUTTON CLICK - DARK MODE
   var modeButton = document.getElementById("dark-mode"),
       modeIcon = modeButton.querySelector(".bx");
+
+  function enableDarkMode() {
+    document.body.classList.add("dark-mode");
+    modeIcon.classList.remove("bx-moon");
+    modeIcon.classList.add("bx-sun");
+    modeIcon.setAttribute("aria-label", "light");
+    document.querySelector(".app-banner__desktop-text").innerHTML = "light";
+  }
+
+  function disableDarkMode() {
+    document.body.classList.remove("dark-mode");
+    modeIcon.classList.remove("bx-sun");
+    modeIcon.classList.add("bx-moon");
+    modeIcon.setAttribute("aria-label", "dark");
+    document.querySelector(".app-banner__desktop-text").innerHTML = "dark";
+  }
+
   modeButton.addEventListener("click", function () {
     if (!document.body.classList.contains("dark-mode")) {
-      document.body.classList.add("dark-mode");
-      modeIcon.classList.remove("bx-moon");
-      modeIcon.classList.add("bx-sun");
-      document.querySelector(".app-banner__button-text").innerHTML = "light";
+      enableDarkMode();
     } else if (document.body.classList.contains("dark-mode")) {
-      document.body.classList.remove("dark-mode");
-      modeIcon.classList.remove("bx-sun");
-      modeIcon.classList.add("bx-moon");
-      document.querySelector(".app-banner__button-text").innerHTML = "dark";
+      disableDarkMode();
     }
   });
 });

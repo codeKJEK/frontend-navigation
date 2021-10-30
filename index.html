@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>navigation</title>
+    <meta name="description" content="Responsive accessible navigation with thumb friendly mobile"/>
     <!-- BOXICON -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="dist/css/style.min.css">
 </head>
-<body>
+
+<body id="app-home">
     <header class="app-banner">
-        <a href="#app-content" class="app-banner__skip">skip to main content</a>
+        <a href="#hero" class="app-banner__skip">skip to main content</a>
         <div class="app-banner__container">
-            <h1 class="app-banner__heading">Company Name</h1>
-            <nav class="app-banner__navigation">
-                <ul class="app-banner__list">
-                    <li class="app-banner__list-item"><a href="#" class="app-banner__link"><i class="bx bx-home-alt app-banner__icon"></i>home</a></li>
-                    <li class="app-banner__list-item"><a href="#about" class="app-banner__link"><i class="bx bx-user app-banner__icon"></i>about</a></li>
-                    <li class="app-banner__list-item"><a href="#location" class="app-banner__link"><i class="bx bx-location-plus app-banner__icon"></i>location</a></li>
-                    <li class="app-banner__list-item"><a href="#contact" class="app-banner__link"><i class="bx bx-message app-banner__icon"></i>contact</a></li>
-                    <li class="app-banner__list-item"><button class="app-banner__button" id="dark-mode"><i class="bx bx-moon app-banner__icon"></i><span class="app-banner__button-text">dark</span> mode</button></li>  
+            <h1 class="app-banner__heading" id="company-name">Company Name</h1>
+            <a href="tel:+0000000000" class="app-banner__phone">(000) 000-0000</a>
+            <nav class="app-banner__navigation" aria-label="Main Navigation">
+                <ul class="app-banner__list" aria-label="Main Navigation Menu" role="menu">
+                    <li class="app-banner__list-item" role="none"><a href="#app-home" id="home-link" class="app-banner__link" role="menuitem">
+                        <i class="bx bx-home-alt app-banner__icon"></i>home</a>
+                    </li>
+                    <li class="app-banner__list-item" role="none">
+                        <a href="#about" class="app-banner__link" role="menuitem">
+                            <i class="bx bx-user app-banner__icon"></i>about
+                        </a>
+                    </li>
+                    <li class="app-banner__list-item" role="none">
+                        <a href="#location" class="app-banner__link" role="menuitem">
+                            <i class="bx bx-location-plus app-banner__icon"></i>location
+                        </a>
+                    </li>
+                    <li class="app-banner__list-item" role="none">
+                        <a href="#contact" class="app-banner__link" role="menuitem">
+                            <i class="bx bx-message app-banner__icon"></i>contact
+                        </a>
+                    </li>
+                    <li class="app-banner__list-item" role="none">
+                        <button class="app-banner__link btn" id="dark-mode" role="menuitem" aria-live="polite">
+                            <i class="bx bx-moon app-banner__icon" aria-label="dark"></i><span class="app-banner__desktop-text">dark</span> mode
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main id="app-content">
-        <section id="hero" aria-labelledby="hero-heading">
+
+    <main id="app-content" tabindex="-1">
+        <section id="hero" aria-labelledby="hero-heading" tabindex="-1">
             <h2 id="hero-heading">Value Proposition</h2>
         </section>
-        <section id="about" aria-labelledby="about-heading">
+        <section id="about" aria-labelledby="about-heading" tabindex="-1">
             <h3 id="about-heading">About</h3>
         </section>
-        <section id="location" aria-labelledby="location-heading">
+        <section id="location" aria-labelledby="location-heading" tabindex="-1">
             <h4 id="location-heading">Location</h5>
         </section>
-        <section id="contact" aria-labelledby="contact-heading">
+        <section id="contact" aria-labelledby="contact-heading" tabindex="-1">
             <h5 id="contact-heading">Contact</h4>
         </section>
     </main>
     <script src="dist/js/scripts.min.js"></script>
 </body>
+
 </html>
