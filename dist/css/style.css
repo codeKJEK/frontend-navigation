@@ -64,7 +64,7 @@ body {
   background: transparent;
   cursor: pointer;
 }
-.app-banner__link {
+.app-banner__menuitem {
   color: inherit;
   text-decoration: none;
   font-size: 0.75em;
@@ -77,7 +77,7 @@ body {
   row-gap: 0.25rem;
   padding: 0;
 }
-.app-banner__link:active {
+.app-banner__menuitem:active {
   animation-name: active-push;
   animation-duration: 0.3s;
   animation-timing-function: linear;
@@ -147,7 +147,7 @@ body {
     flex-direction: row;
     column-gap: 0.25rem;
   }
-  .app-banner__link {
+  .app-banner__menuitem {
     font-size: 0.9em;
     min-height: unset;
     min-width: unset;
@@ -156,7 +156,7 @@ body {
     overflow: hidden;
     padding: 1rem 0;
   }
-  .app-banner__link:before {
+  .app-banner__menuitem:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -170,7 +170,7 @@ body {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
   }
-  .app-banner__link:hover:before {
+  .app-banner__menuitem:hover:before {
     transform: translateY(0);
   }
   .app-banner__desktop-text {
