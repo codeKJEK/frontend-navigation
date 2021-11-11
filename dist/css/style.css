@@ -87,7 +87,7 @@ body {
   display: none;
 }
 .app-banner__icon {
-  font-size: 1.5rem;
+  font-size: 2em;
 }
 
 @keyframes active-push {
@@ -163,7 +163,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: gray;
+    background: #808080;
     height: 4px;
     transform: translateY(4px);
     transition-property: transform;

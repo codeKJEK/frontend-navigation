@@ -1,4 +1,35 @@
-// base scss
+// VARIABLES
+// color
+$color-lightest: #f2f2f2;
+$color-darkest: #0d0d0d;
+$color-banner: #d9d9d9;
+$color-banner-dark: #262626;
+$color-midtone: #808080;
+// height
+$height-banner: 4rem;
+$height-menuitem: 3.5rem;
+// width
+$width-menuitem: 3.5rem;
+$width-max: 1024px;
+// gap
+$gap-menuitem: .25rem;
+$gap-list: 1.5rem;
+$gap-list-desktop: 1.75rem;
+// padding
+$padding-landmark: 1rem;
+$padding-menuitem: 1rem;
+// font-size
+$size-menuitem: .75em; 
+$size-menuitem-desktop: .9em; 
+$size-icon: 2em;
+$size-company-name: 1em;
+$size-phone: .9em;
+// breakpoints
+$breakpoint-small: 426px;
+$breakpoint-desktop: 769px;
+$breakpoint-desktop-large: 1025px;
+
+// GLOBAL
 html {
     scroll-behavior: smooth;
 }
@@ -8,15 +39,16 @@ body {
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f2f2f2;
+    background: $color-lightest;
 }
 
+// APP BANNER
 .app-banner {
-    background-color: #d9d9d9;
+    background-color: $color-banner;
     &__skip {
         display: block;
         text-align: center;
-        padding: 1rem 0;
+        padding: $padding-menuitem 0;
         color: inherit;
         text-transform: capitalize;
         position: absolute;
@@ -28,30 +60,30 @@ body {
         }
     }
     &__container {
-        min-height: 4rem;
+        min-height: $height-banner;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 1rem;
+        padding: 0 $padding-landmark;
     }
     &__heading {
-        font-size: 1em;
+        font-size: $size-company-name;
     }
     &__phone {
         text-decoration: none;
         color: inherit;
-        font-size: .9em;
+        font-size: $size-phone;
     }
     &__navigation {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #d9d9d9;
+        background-color: $color-banner;
         border-radius: .75rem .75rem 0 0;
     }
     &__list {
-        min-height: 4rem;
+        min-height: $height-banner;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -67,14 +99,14 @@ body {
     &__menuitem {
         color: inherit;
         text-decoration: none;
-        font-size: .75em;
-        min-height: 3.5rem;
-        min-width: 3.5rem;
+        font-size: $size-menuitem;
+        min-height: $height-menuitem;
+        min-width: $width-menuitem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        row-gap: .25rem;
+        row-gap: $gap-menuitem;
         padding: 0;
         &:active {
             animation-name: active-push;
@@ -87,10 +119,11 @@ body {
         display: none;
     }
     &__icon {
-        font-size: 1.5rem;
+        font-size: $size-icon;
     }
 }
 
+// ACTIVE PUSH ANIMATION
 @keyframes active-push {
     50% {
         transform: scale(0.8);
@@ -100,27 +133,30 @@ body {
     }
 }
 
+// DARK MODE
 .dark-mode {
-    background-color: #0d0d0d;
-    color: #f2f2f2;
+    background-color: $color-darkest;
+    color: $color-lightest;
     .app-banner {
-        background-color: #262626;
+        background-color: $color-banner-dark;
         &__navigation {
-            background-color: #262626;
+            background-color: $color-banner-dark;
         }
     }
 }
 
-@media screen and (min-width: 426px) {
+// BREAKPOINT MOBILE TO TABLET
+@media screen and (min-width: $breakpoint-small) {
     .app-banner {
         &__list {
             justify-content: center;
-            column-gap: 1.5rem;
+            column-gap: $gap-list;
         }
     }
 }
 
-@media screen and (min-width: 769px) {
+// BREAKPOINT DESKTOP TO MOBILE
+@media screen and (min-width: $breakpoint-desktop) {
     body {
         font-size: 18px;
     }
@@ -131,7 +167,7 @@ body {
         width: 100%;
         &__container {
             justify-content: space-between;
-            padding: 0 1rem;
+            padding: 0 $padding-landmark;
         }
         &__phone {
             display: none;
@@ -141,7 +177,7 @@ body {
             width: unset;
         }
         &__list {
-            column-gap: 1.75rem;
+            column-gap: $gap-list-desktop;
         }
         &__icon {
             display: none;
@@ -151,13 +187,13 @@ body {
             column-gap: .25rem;
         }
         &__menuitem {    
-            font-size: .9em;
+            font-size: $size-menuitem-desktop;
             min-height: unset;
             min-width: unset;
             position: relative;
             transform: perspective(1px) translateZ(0);
             overflow: hidden;
-            padding: 1rem 0;
+            padding: $padding-menuitem 0;
             &:before {
                 content: "";
                 position: absolute;
@@ -165,7 +201,7 @@ body {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: gray;
+                background: $color-midtone;
                 height: 4px;
                 transform: translateY(4px);
                 transition-property: transform;
@@ -184,36 +220,39 @@ body {
     
 }
 
-@media screen and (min-width: 1025px) {
+// BREAKPOINT DESKTOP TO LARGE DESKTOP
+@media screen and (min-width: $breakpoint-desktop-large) {
     .app-banner {
         &__container {
-            max-width: 1024px;
+            max-width: $width-max;
             margin: 0 auto;
         }
     }
 }
 
+
+// BASIC STYLES FOR CONTENT
 main {
     section {
         height: 100vh;
-        padding: 0 1rem;
+        padding: 0 $padding-landmark;
         h2, h3, h4, h5, h6 {
             text-align: center;
         }
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $breakpoint-desktop) {
     main {
         section {
-            padding-top: 4rem;
+            padding-top: $height-banner;
         }
     }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: $breakpoint-desktop-large) {
     main {
         section {
-            max-width: 1024px;
+            max-width: $width-max;
             margin: 0 auto;
         }
     }
