@@ -1,29 +1,21 @@
 // VARIABLES
 // color
-$color-lightest: #f2f2f2;
-$color-darkest: #0d0d0d;
+$color-background: #f2f2f2;
+$color-font: #0d0d0d;
+$color-background-dark: #0d0d0d;
+$color-font-dark: #f2f2f2;
 $color-banner: #d9d9d9;
 $color-banner-dark: #262626;
-$color-midtone: #808080;
-// height
-$height-banner: 4rem;
-$height-menuitem: 3.5rem;
-// width
-$width-menuitem: 3.5rem;
-$width-max: 1024px;
-// gap
-$gap-menuitem: .25rem;
-$gap-list: 1.5rem;
-$gap-list-desktop: 1.75rem;
-// padding
-$padding-landmark: 1rem;
-$padding-menuitem: 1rem;
-// font-size
-$size-menuitem: .75em; 
-$size-menuitem-desktop: .9em; 
-$size-icon: 2em;
-$size-company-name: 1em;
-$size-phone: .9em;
+$color-underline: #808080;
+// size
+$size-banner: 4rem;
+$size-menuitem: 3.5rem;
+$size-max: 1024px;
+$font-size-menuitem: .75em; 
+$font-size-menuitem-desktop: .9em; 
+$font-size-icon: 2em;
+$font-size-company-name: 1em;
+$font-size-phone: .9em;
 // breakpoints
 $breakpoint-small: 426px;
 $breakpoint-desktop: 769px;
@@ -39,7 +31,7 @@ body {
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    background: $color-lightest;
+    background: $color-background;
 }
 
 // APP BANNER
@@ -48,7 +40,7 @@ body {
     &__skip {
         display: block;
         text-align: center;
-        padding: $padding-menuitem 0;
+        padding: 1rem 0;
         color: inherit;
         text-transform: capitalize;
         position: absolute;
@@ -60,19 +52,19 @@ body {
         }
     }
     &__container {
-        min-height: $height-banner;
+        min-height: $size-banner;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 $padding-landmark;
+        padding: 0 1rem;
     }
     &__heading {
-        font-size: $size-company-name;
+        font-size: $font-size-company-name;
     }
     &__phone {
         text-decoration: none;
         color: inherit;
-        font-size: $size-phone;
+        font-size: $font-size-phone;
     }
     &__navigation {
         position: fixed;
@@ -83,7 +75,7 @@ body {
         border-radius: .75rem .75rem 0 0;
     }
     &__list {
-        min-height: $height-banner;
+        min-height: $size-banner;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -99,14 +91,14 @@ body {
     &__menuitem {
         color: inherit;
         text-decoration: none;
-        font-size: $size-menuitem;
-        min-height: $height-menuitem;
-        min-width: $width-menuitem;
+        font-size: $font-size-menuitem;
+        min-height: $size-menuitem;
+        min-width: $size-menuitem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        row-gap: $gap-menuitem;
+        row-gap: .25rem;
         padding: 0;
         &:active {
             animation-name: active-push;
@@ -119,7 +111,7 @@ body {
         display: none;
     }
     &__icon {
-        font-size: $size-icon;
+        font-size: $font-size-icon;
     }
 }
 
@@ -135,8 +127,8 @@ body {
 
 // DARK MODE
 .dark-mode {
-    background-color: $color-darkest;
-    color: $color-lightest;
+    background-color: $color-background-dark;
+    color: $color-font-dark;
     .app-banner {
         background-color: $color-banner-dark;
         &__navigation {
@@ -150,7 +142,7 @@ body {
     .app-banner {
         &__list {
             justify-content: center;
-            column-gap: $gap-list;
+            column-gap: 1.5rem;
         }
     }
 }
@@ -167,7 +159,7 @@ body {
         width: 100%;
         &__container {
             justify-content: space-between;
-            padding: 0 $padding-landmark;
+            padding: 0 1rem;
         }
         &__phone {
             display: none;
@@ -177,7 +169,7 @@ body {
             width: unset;
         }
         &__list {
-            column-gap: $gap-list-desktop;
+            column-gap: 1.75rem;
         }
         &__icon {
             display: none;
@@ -187,13 +179,13 @@ body {
             column-gap: .25rem;
         }
         &__menuitem {    
-            font-size: $size-menuitem-desktop;
+            font-size: $font-size-menuitem-desktop;
             min-height: unset;
             min-width: unset;
             position: relative;
             transform: perspective(1px) translateZ(0);
             overflow: hidden;
-            padding: $padding-menuitem 0;
+            padding: 1rem 0;
             &:before {
                 content: "";
                 position: absolute;
@@ -201,7 +193,7 @@ body {
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: $color-midtone;
+                background: $color-underline;
                 height: 4px;
                 transform: translateY(4px);
                 transition-property: transform;
@@ -224,7 +216,7 @@ body {
 @media screen and (min-width: $breakpoint-desktop-large) {
     .app-banner {
         &__container {
-            max-width: $width-max;
+            max-width: $size-max;
             margin: 0 auto;
         }
     }
@@ -235,7 +227,7 @@ body {
 main {
     section {
         height: 100vh;
-        padding: 0 $padding-landmark;
+        padding: 0 1rem;
         h2, h3, h4, h5, h6 {
             text-align: center;
         }
@@ -245,14 +237,14 @@ main {
 @media screen and (min-width: $breakpoint-desktop) {
     main {
         section {
-            padding-top: $height-banner;
+            padding-top: $size-banner;
         }
     }
 }
 @media screen and (min-width: $breakpoint-desktop-large) {
     main {
         section {
-            max-width: $width-max;
+            max-width: $size-max;
             margin: 0 auto;
         }
     }
